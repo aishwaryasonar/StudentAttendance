@@ -1,0 +1,72 @@
+drop database studAttendaceDB;
+create database studAttendaceDB;
+use studAttendaceDB;
+
+create table admin(
+ID int NOT NULL AUTO_INCREMENT,
+username varchar(200),
+password varchar(200),
+PRIMARY KEY(ID)
+);
+
+insert into admin values(0,'admin','admin@123');
+
+create table facultydb(
+ID int NOT NULL AUTO_INCREMENT,
+contact varchar(200) unique,
+password varchar(200),
+name varchar(300),
+class varchar(50),
+email varchar(200),
+PRIMARY KEY(ID)
+);
+
+select * from facultydb;
+
+create table studentdb(
+ID int NOT NULL AUTO_INCREMENT,
+name varchar(300),
+class varchar(100),
+rollno varchar(200),
+fID int,
+PRIMARY KEY(ID)
+);
+
+select * from studentdb;
+
+create table portal(
+ID int NOT NULL AUTO_INCREMENT,
+studID int,
+name varchar(300),
+commskills varchar(200),
+academic varchar(200),
+practical varchar(200),
+fiD int,
+dt date,
+PRIMARY KEY(ID)
+);
+
+select * from portal;
+
+create table attendancedb(
+ID int NOT NULL AUTO_INCREMENT,
+subject varchar(300),
+class varchar(100),
+rollno varchar(100),
+studname varchar(200),
+studID int,
+facultyUID varchar(200),
+facultyName varchar(200),
+attendanceStatus int,
+dt date,
+attendanceType int,
+PRIMARY KEY(ID)
+);
+
+select * from attendancedb;
+
+attendanceStatus 0-absent / 1-Present
+attendanceType 0-lecture/1-practical
+=====================================================
+
+http://localhost/BEPROJECT/StudentAttendance/

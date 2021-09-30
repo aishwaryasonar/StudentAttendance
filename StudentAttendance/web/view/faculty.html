@@ -1,0 +1,96 @@
+<div class="w3-container">
+
+    <h4>
+        MANAGE FACULTY
+    </h4>
+    <div ng-show="loading" class="loading w3-center">
+        <p>
+            <i class="fa fa-spinner w3-spin" style="font-size:64px"></i>
+        </p>
+    </div>
+    <div class="w3-panel w3-border w3-round  w3-padding" style="min-height: 500px;">
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading" style="color: #fff;background-color: #6b3333;">Personal details</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="cost">Name
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <input type="text" class="form-control" ng-model="name" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="sku" class=>Contact
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <input type="text" class="form-control" ng-model="contact" placeholder="Enter contact">
+                            </div>
+                            <div class="form-group">
+                                <label for="discount">Email
+                                        <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                    </label>
+                                <input type="email" class="form-control" ng-model="email" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="discount">Password
+                                        <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                    </label>
+                                <input type="text" class="form-control" ng-model="password" placeholder="Enter Password">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="discount">Class
+                                        <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                    </label>
+                                <input type="text" class="form-control" ng-model="class" placeholder="Enter class">
+                            </div> -->
+                            <div class="form-group">
+                                <label>Class
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="class">
+                                    <option value="-">Select class</option>
+                                    <option ng-repeat="x in arrayData33" value="{{x}}">{{x}}</option>
+
+                                </select>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="w3-button w3-green w3-round" ng-click="save()">SUBMIT</button>
+                                <button class="w3-button w3-pink w3-round" ng-click="update()">UPDATE</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--  panelend -->
+                </div>
+                <!-- col end -->
+                <div class="col-md-8">
+ <div class="table-responsive" >
+                   <table class="w3-table-all"> 
+                        <tr "x in arrayData" ng-show="arrayData">
+                            <th>NAME</th>
+                            <th>CONTACT</th>
+                            <th>EMAIL</th>
+                            <th>CLASS</th>
+                            <th>EDIT</th>
+                            <th>DELETE</th>
+                        </tr>
+                        <tr ng-repeat="x in arrayData">
+                            <td>{{ x.name }}</td>
+                            <td>{{ x.contact }}</td>
+                            <td>{{ x.email }}</td>
+                            <td>{{ x.class }}</td>
+                            <td><button class="w3-button w3-blue w3-round" ng-click="edit(x.ID,x.name,x.contact,x.email,x.class)">EDIT</button></td>
+                            <td><button class="w3-button w3-red w3-round" ng-click="delete(x.ID)">DELETE</button></td>
+
+                        </tr>
+                    </table>
+					  </div>
+                </div>
+                <!-- col end -->
+
+            </div>
+        </form>
+    </div>
+</div>

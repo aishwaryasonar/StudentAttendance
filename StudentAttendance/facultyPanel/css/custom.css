@@ -1,0 +1,192 @@
+.container{
+	width:90%;
+	margin: auto;
+	margin-bottom:50px;
+}
+
+.panel-danger > .panel-heading {
+    color: #ffffff;
+    background-color: #70ad47;
+    border-color: #ebccd1;
+}
+
+.checkoutstyle{
+	width:80%;
+	margin: auto;
+}
+.title{
+	text-align:center;
+}
+
+.add-car-button{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ 
+    font-family: 'PT Serif', serif !important;
+    font-weight: 600 !important;
+    margin: 10px 0;
+}
+/* table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+table tr {
+  border: 1px solid #ddd;
+}
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+  word-break: break-all;
+}
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+} */
+
+/* table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+} */
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+}
+tr:hover{background-color:#f5f5f5}
+
+.buttonhtwd{
+	width:100px;
+	height: 30px;
+	text-align:center;
+	
+}
+.alignbuttonright{
+	float:right;
+}
+.invoicepanel{
+	min-height: 320px;
+	
+}
+.updatepanel{
+	height: auto;
+	
+}
+.image{
+	width:200px;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+.form-container{
+	width:800px;
+	margin-right:auto;
+	margin-left:auto;
+}
+.unit-container{
+	width:650px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #000;
+	color:#D32F2F;
+}
+
+.navbar {
+    border-radius: 0px;
+	background-color:#378394;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+.loading{
+	text-align:center;
+}
+
+@media (max-width: 500px){
+	.image{
+		width:100px;
+	}
+	.form-container{
+		width:100%;
+		margin-right:auto;
+		margin-left:auto;
+	}
+	.unit-container{
+	width:auto;
+	margin-right:auto;
+	margin-left:auto;
+}
+}

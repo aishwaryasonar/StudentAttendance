@@ -1,0 +1,73 @@
+<div class="w3-container">
+
+    <h4>
+        MANAGE MENTOR
+    </h4>
+    <div ng-show="loading" class="loading w3-center">
+        <p>
+            <i class="fa fa-spinner w3-spin" style="font-size:64px"></i>
+        </p>
+    </div>
+    <div class="w3-panel w3-border w3-round  w3-padding" style="min-height: 500px;">
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading" style="color: #fff;background-color: #6b3333;">Mentor details</div>
+                        <div class="panel-body">
+                           
+                            <div class="form-group">
+                                <label>Student
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="studentList">
+                                    <option value="-">Select student</option>
+                                    <option ng-repeat="x in arrayData" value="{{x}}">{{x.name}}</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Faculty
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="facultyList">
+                                    <option value="-">Select student</option>
+                                    <option ng-repeat="x in arrayData2" value="{{x}}">{{x.name}}</option>
+
+                                </select>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="w3-button w3-green w3-round" ng-click="save()">SUBMIT</button>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--  panelend -->
+                </div>
+                <!-- col end -->
+                <div class="col-md-8">
+
+                     <div class="table-responsive" >
+                    <table class="w3-table-all"> 
+                        <tr "x in arrayData3" ng-show="arrayData3">
+                            <th>STUDENT NAME</th>
+                            <th>CLASS</th>
+                            <th>FACULTY</th>
+                        </tr>
+                        <tr ng-repeat="x in arrayData3">
+                            <td>{{ x.name }}</td>
+                            <td>{{ x.class }}</td>
+                            <td>{{ x.fname }}</td>
+
+                        </tr>
+                    </table>
+					</div>
+                </div>
+                <!-- col end -->
+
+            </div>
+        </form>
+    </div>
+</div>

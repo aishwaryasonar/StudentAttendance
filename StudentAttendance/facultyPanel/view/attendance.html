@@ -1,0 +1,156 @@
+<div class="w3-container">
+
+    <h4>
+        MANAGE ATTENDANCE
+    </h4>
+    <div ng-show="loading" class="loading w3-center">
+        <p>
+            <i class="fa fa-spinner w3-spin" style="font-size:64px"></i>
+        </p>
+    </div>
+    <div class="w3-panel w3-border w3-round  w3-padding" style="min-height: 500px;">
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading" style="color: #fff;background-color: #6b3333;">Mark Attendance</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label>Subject
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="subjects">
+                                    <option value="-">Select subject</option>
+                                    <option ng-repeat="x in arrayData" value="{{x}}">{{x}}</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Class
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="classList">
+                                    <option value="-">Select class</option>
+                                    <option ng-repeat="x in arrayData2" value="{{x}}">{{x}}</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+
+                                <button class="w3-button w3-pink w3-round" ng-click="loadStudents()">LOAD STUDENTS</button>
+                            </div>
+                            <div class="form-group">
+                                <label>Student
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="studentList">
+                                    <option value="-">Select student</option>
+                                    <option ng-repeat="x in arrayData3" value="{{x}}">{{x.name}}</option>
+
+                                </select>
+                            </div>
+                            <label for="instock">Attendance
+                                <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                            </label>
+                            <div class="form-group">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" ng-model="optradio" value="1">Present</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" ng-model="optradio" value="0">Absent</label>
+                            </div>
+                            <label for="instock">Attendance type
+                                <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                            </label>
+                            <div class="form-group">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio2" ng-model="optradio2" value="1">Practical</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio2" ng-model="optradio2" value="0">Lecture</label>
+                            </div>
+
+                            <div class="panel-footer">
+                                <button class="w3-button w3-green w3-round" ng-click="save()">SUBMIT</button>
+                                <!-- <button class="w3-button w3-pink w3-round" ng-click="update()">UPDATE</button> -->
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--  panelend -->
+                </div>
+                <!-- col end -->
+                <div class="col-md-8">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading" style="color: #fff;background-color: #6b3333;">View Attendance</div>
+                        <div class="panel-body">
+                            <div class="form-group col-md-6">
+                                <label>Subject
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="subjects22">
+                                    <option value="-">Select subject</option>
+                                    <option ng-repeat="x in arrayData22" value="{{x}}">{{x}}</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Class
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="classList33">
+                                    <option value="-">Select class</option>
+                                    <option ng-repeat="x in arrayData33" value="{{x}}">{{x}}</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="cost">From date
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <input type="text" class="form-control" ng-model="dt1" placeholder="Enter from date">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="cost">To date
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <input type="text" class="form-control" ng-model="dt2" placeholder="Enter to date">
+                            </div>
+                            <label for="instock">Attendance type
+                                <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                            </label>
+                            <div class="form-group">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio3" ng-model="optradio3" value="1">Practical</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio3" ng-model="optradio3" value="0">Lecture</label>
+                            </div>
+                            <button class="w3-button w3-green w3-round w3-right" ng-click="viewRecords()" style="margin-bottom:10px;">VIEW RECORDS</button>
+                             <div class="table-responsive" >
+							<table class="w3-table-all">
+                                <tr "x in attendanceData" ng-show="attendanceData">
+                                    <th>STUDENT NAME</th>
+                                    <th>ROLLNO</th>
+                                    <th>TOTAL LECTURES</th>
+                                    <th>TOTAL PRESENT</th>
+                                    <th>TOTAL ABSENT</th>
+
+                                </tr>
+                                <tr ng-repeat="x in attendanceData">
+                                    <td>{{ x.studname }}</td>
+                                    <td>{{ x.rollno }}</td>
+                                    <td>{{ x.totallectures }}</td>
+                                    <td>{{ x.totalpresent }}</td>
+                                    <td>{{ x.totalabsent }}</td>
+
+                                </tr>
+                            </table>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- col end -->
+
+    </div>
+    </form>
+</div>
+</div>

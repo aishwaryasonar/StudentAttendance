@@ -1,0 +1,93 @@
+<div class="w3-container">
+
+    <h4>
+        MANAGE PORTAL
+    </h4>
+    <div ng-show="loading" class="loading w3-center">
+        <p>
+            <i class="fa fa-spinner w3-spin" style="font-size:64px"></i>
+        </p>
+    </div>
+    <div class="w3-panel w3-border w3-round  w3-padding" style="min-height: 500px;">
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default ">
+                        <div class="panel-heading" style="color: #fff;background-color: #6b3333;">Portal details</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label>Student
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="student">
+                                    <option value="-">Select student</option>
+                                    <option ng-repeat="x in arrayData" value="{{x}}">{{x.name}}</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cost">Communication skills (1-10)
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <input type="text" class="form-control" ng-model="commskills" placeholder="Enter communication skills">
+                            </div>
+                            <div class="form-group">
+                                <label for="sku" class=>Academic performance
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <input type="text" class="form-control" ng-model="academic" placeholder="Enter Academic performance">
+                            </div>
+                            <div class="form-group">
+                                <label for="discount">Practical Knowledge
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <input type="text" class="form-control" ng-model="practical" placeholder="Enter Practical Knowledge">
+                            </div>
+                            <div class="panel-footer">
+                                <button class="w3-button w3-green w3-round" ng-click="save()">SUBMIT</button>
+                                <!-- <button class="w3-button w3-pink w3-round" ng-click="update()">UPDATE</button> -->
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--  panelend -->
+                </div>
+                <!-- col end -->
+                <div class="col-md-8">
+                        <div class="form-group col-md-6">
+                                <label>Students
+                                    <i class="fa fa-question-circle" style="color: #3c8dbc;"></i>
+                                </label>
+                                <select class="form-control" ng-model="mystudents">
+                                    <option value="-">Select student</option>
+                                    <option ng-repeat="x in arrayData22" value="{{x}}">{{x.name}}</option>
+
+                                </select>
+                            </div>
+                            <button class="w3-button w3-green w3-round w3-right" ng-click="viewRecords()" style="margin-bottom:10px;">VIEW</button>
+<div class="table-responsive" >                   
+				   <table class="w3-table-all">
+                        <tr "x in arrayData5" ng-show="arrayData5">
+                            <th>DATE</th>
+                            <th>COMMUNICATION SKILLS</th>
+                            <th>ACADEMIC</th>
+                            <th>PRACTICAL</th>
+                          
+                        </tr>
+                        <tr ng-repeat="x in arrayData5">
+                            <td>{{ x.dt }}</td>
+                            <td>{{ x.commskills }}</td>
+                            <td>{{ x.academic }}</td>
+                            <td>{{ x.practical }}</td>
+                           
+
+                        </tr>
+                    </table>
+					 </div>
+                </div>
+                <!-- col end -->
+
+            </div>
+        </form>
+    </div>
+</div>
